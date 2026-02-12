@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react';
-import Navbar from '../components/navbar';
+//import Navbar from '../components/navbar';
 
 interface LayoutProps {
-  children?: ReactNode; // Recommended for most cases
+  children?: ReactNode;
 }
 
 function Layout( { children }: LayoutProps ) {
   return(
     <>
-      <Navbar/>
-      <div>
-      { children }
-      </div>
+      {/*<Navbar/>*/}
+      <main style={{ margin: 0, padding: 0 }}>
+        { children }
+      </main>
     </>
   )
 }
