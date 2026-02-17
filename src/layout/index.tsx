@@ -12,7 +12,7 @@ function Layout( { children }: LayoutProps ) {
       <Navbar/>
       {/* Spacer to account for fixed navbar */}
       <div style={{ height: '76px' }} />
-      <main style={{ margin: 0, padding: 0, flex: '1 0 auto', marginBottom: '88px' }}>
+      <main style={{ margin: 0, padding: 0, flex: '1 0 auto' }}>
         { children }
       </main>
       {/*<CallToAction />*/}
