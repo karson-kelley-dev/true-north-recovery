@@ -8,19 +8,17 @@ import Services from './pages/services.tsx'
 
 function App() {
   return (
-    <div style={{ margin: 0, padding: 0, border: 'none' }}>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/services' element={<Services />} />
-            <Route path='/compliance' element={<Compliance />}></Route>
-            <Route path='/coverage' element={<Coverage />}></Route>
-            <Route path='/contact' element={<Contact />}></Route>
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/compliance' element={<Compliance />}></Route>
+          <Route path='/coverage' element={<Coverage />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   )
 }
 

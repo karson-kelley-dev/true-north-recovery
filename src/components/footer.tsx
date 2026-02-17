@@ -11,8 +11,6 @@ function Footer() {
         color: 'white',
         padding: '2rem',
         marginTop: 'auto',
-        position: 'sticky',
-        bottom: 0
       }}
     >
       <Container maxWidth="lg">

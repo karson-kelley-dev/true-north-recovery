@@ -249,8 +249,8 @@ function Compliance() {
               background: '#3B4E73',
               color: '#E5F1FF',
               fontWeight: 600,
-              padding: '1rem 2rem',
-              fontSize: '1rem',
+              padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
+              fontSize: { xs: '0.9rem', md: '1rem' },
               '&:hover': {
                 background: '#1A2E50',
                 boxShadow: '0 8px 24px rgba(26, 46, 80, 0.2)',
@@ -371,8 +371,8 @@ function Compliance() {
               background: '#E5F1FF',
               color: '#1A2E50',
               fontWeight: 600,
-              padding: '1rem 3rem',
-              fontSize: '1rem',
+              padding: { xs: '0.875rem 2rem', md: '1rem 3rem' },
+              fontSize: { xs: '0.95rem', md: '1rem' },
               letterSpacing: '0.5px',
               '&:hover': {
                 background: '#ffffff',

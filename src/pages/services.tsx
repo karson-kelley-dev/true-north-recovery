@@ -244,8 +244,8 @@ function Services() {
               background: '#E5F1FF',
               color: '#1A2E50',
               fontWeight: 600,
-              padding: '1rem 3rem',
-              fontSize: '1rem',
+              padding: { xs: '0.875rem 2rem', md: '1rem 3rem' },
+              fontSize: { xs: '0.95rem', md: '1rem' },
               letterSpacing: '0.5px',
               '&:hover': {
                 background: '#ffffff',

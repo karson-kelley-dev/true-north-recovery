@@ -67,10 +67,14 @@ function Navbar() {
 
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
       sx={{
         background: '#1A2E50',
         boxShadow: '0 4px 20px rgba(26, 46, 80, 0.15)',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1100,
       }}
     >
       <Container maxWidth="lg">
@@ -90,7 +94,7 @@ function Navbar() {
               alignItems: 'center',
             }}
           >
-            <img 
+            <img
               src={TrueNorthImage}
               alt="True North Recovery"
               style={{

@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 import blueSteelTexture from '../assets/bluefinal.png'
-import coverageArea from '../assets/coverage-area.png'
+import coverageArea from '../assets/coverage.png'
 
 function Coverage() {
 
@@ -59,23 +59,23 @@ function Coverage() {
       <Box sx={{ padding: { xs: '3rem 1rem', md: '4rem 2rem' }, background: '#fff', margin: 0 }}>
         <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
           {/* Map Placeholder */}
-          <Box sx={{ padding: { xs: '3rem 1rem', md: '4rem 2rem' }, background: '#fff', margin: 0 }}>
+          <Box sx={{ padding: { xs: '2rem 0', md: '4rem 2rem' }, background: '#fff', margin: 0 }}>
             <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
-              <Typography variant="h5" sx={{ marginBottom: 2, color: '#1A2E50', fontWeight: 700 }}>
+              <Typography variant="h5" sx={{ marginBottom: 2, color: '#1A2E50', fontWeight: 700, fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
                 Coverage Map
               </Typography>
-              
-              <Box sx={{ width: '100%', height: { xs: '400px', md: '600px' }, borderRadius: '8px', overflow: 'hidden' }}>
+
+              <Box sx={{ width: '100%', height: 'auto', borderRadius: '8px', overflow: 'hidden', boxShadow: { xs: '0 2px 8px rgba(0,0,0,0.1)', md: '0 4px 12px rgba(0,0,0,0.1)' } }}>
                 {/*<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YPG22ULHxVgwQICrAIYKrdX_bLV5QRU&ehbc=2E312F&noprof=1"
-                  width="100%" 
+                  width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   loading="lazy"
                 ></iframe>*/}
-                <img 
+                <img
                   src={coverageArea}
                   alt="Coverage Map"
-                  style={{ 
+                  style={{
                     width: '100%',
                     height: 'auto',
                     display: 'block',
@@ -88,14 +88,14 @@ function Coverage() {
           </Box>
 
           {/* Coverage Area Counties */}
-          <Box sx={{ marginBottom: 4 }}>
+          <Box sx={{ marginBottom: 4, marginTop: { xs: 3, md: 4 } }}>
             <Typography
               variant="h5"
               sx={{
                 color: '#1A2E50',
                 fontWeight: 700,
-                marginBottom: 2,
-                fontSize: '1.3rem',
+                marginBottom: { xs: 2, md: 3 },
+                fontSize: { xs: '1.25rem', md: '1.5rem' },
               }}
             >
               Coverage Area Counties
@@ -105,7 +105,7 @@ function Coverage() {
               sx={{
                 display: 'grid',
                 gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
-                gap: 2,
+                gap: { xs: 1.5, md: 2 },
               }}
             >
               {[
@@ -134,7 +134,7 @@ function Coverage() {
                 <Box
                   key={index}
                   sx={{
-                    padding: '1.5rem',
+                    padding: { xs: '1rem', md: '1.5rem' },
                     background: '#f8f9fa',
                     borderLeft: '4px solid #3B4E73',
                     borderRadius: '4px',
@@ -144,7 +144,7 @@ function Coverage() {
                     sx={{
                       color: '#1A2E50',
                       fontWeight: 600,
-                      marginBottom: 1,
+                      fontSize: { xs: '0.95rem', md: '1rem' },
                     }}
                   >
                     {county}

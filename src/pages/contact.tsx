@@ -343,13 +343,14 @@ function Contact() {
               type="submit"
               disabled={loading}
               variant="contained"
+              fullWidth
               sx={{
                 background: '#3B4E73',
                 color: '#E5F1FF',
                 fontWeight: 600,
-                padding: '1rem 2rem',
-                fontSize: '1rem',
-                alignSelf: 'flex-start',
+                padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
+                fontSize: { xs: '0.95rem', md: '1rem' },
+                alignSelf: { xs: 'stretch', md: 'flex-start' },
                 marginTop: 1,
                 '&:hover': {
                   background: '#1A2E50',

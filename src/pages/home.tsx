@@ -56,53 +56,57 @@ function Home() {
                 >
                   TrueNorth Recovery delivers professional, compliant asset recovery services for lienholders across North Carolina — built on transparency, accountability, and a commitment to raising the standard of how recovery is done.
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 2 }}>
-                 
-                  <a rel="noopener noreferrer" target="_blank" href='https://scheduler.cleardata.io/#!/calendar?a=G8kNdo_-S_uHNW44JgJ_qTcETlcpm8hjIKfQ8KR5CSQ&b=43b'
-                  >
-                    <Button
-                      variant="contained"
-                      sx={{
-                        background: '#E5F1FF',
-                        color: '#1A2E50',
-                        fontWeight: 600,
-                        padding: '1rem 2rem',
-                        fontSize: '1rem',
-                        letterSpacing: '0.5px',
-                        '&:hover': {
-                          background: '#ffffff',
-                          boxShadow: '0 8px 24px rgba(26, 46, 80, 0.2)',
-                          transform: 'translateY(-2px)',
-                        },
-                        transition: 'all 0.3s ease',
-                      }}
-                    >
-                      Transport Appointment
-                    </Button>
-                  </a>
-                  <a rel="noopener noreferrer" target="_blank" href='https://scheduler.cleardata.io/#!/calendar?a=G8kNdo_-S_uHNW44JgJ_qTcETlcpm8hjIKfQ8KR5CSQ&b=6p7'
-                  >
-                    <Button
-                      variant="outlined"
-                      sx={{
-                        color: '#E5F1FF',
-                        borderColor: '#E5F1FF',
-                        fontWeight: 600,
-                        padding: '1rem 2rem',
-                        fontSize: '1rem',
-                        letterSpacing: '0.5px',
-                        '&:hover': {
+                <Box sx={{ display: 'flex', gap: { xs: 2, sm: 1 }, flexWrap: 'wrap', mt: 2, flexDirection: { xs: 'column', sm: 'row' } }}>
+
+                  <Box sx={{ flex: { xs: '1 1 100%', sm: '0 1 auto' } }}>
+                    <a rel="noopener noreferrer" target="_blank" href='https://scheduler.cleardata.io/#!/calendar?a=G8kNdo_-S_uHNW44JgJ_qTcETlcpm8hjIKfQ8KR5CSQ&b=43b' style={{ textDecoration: 'none' }}>
+                      <Button
+                        variant="contained"
+                        fullWidth
+                        sx={{
                           background: '#E5F1FF',
                           color: '#1A2E50',
+                          fontWeight: 600,
+                          padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
+                          fontSize: { xs: '0.95rem', md: '1rem' },
+                          letterSpacing: '0.5px',
+                          '&:hover': {
+                            background: '#ffffff',
+                            boxShadow: '0 8px 24px rgba(26, 46, 80, 0.2)',
+                            transform: 'translateY(-2px)',
+                          },
+                          transition: 'all 0.3s ease',
+                        }}
+                      >
+                        Transport Appointment
+                      </Button>
+                    </a>
+                  </Box>
+                  <Box sx={{ flex: { xs: '1 1 100%', sm: '0 1 auto' } }}>
+                    <a rel="noopener noreferrer" target="_blank" href='https://scheduler.cleardata.io/#!/calendar?a=G8kNdo_-S_uHNW44JgJ_qTcETlcpm8hjIKfQ8KR5CSQ&b=6p7' style={{ textDecoration: 'none' }}>
+                      <Button
+                        variant="outlined"
+                        fullWidth
+                        sx={{
+                          color: '#E5F1FF',
                           borderColor: '#E5F1FF',
-                        },
-                        transition: 'all 0.3s ease',
-                      }}
-                    >
-                      Property Appointment
-                    </Button>
-                  </a>
-                  
+                          fontWeight: 600,
+                          padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
+                          fontSize: { xs: '0.95rem', md: '1rem' },
+                          letterSpacing: '0.5px',
+                          '&:hover': {
+                            background: '#E5F1FF',
+                            color: '#1A2E50',
+                            borderColor: '#E5F1FF',
+                          },
+                          transition: 'all 0.3s ease',
+                        }}
+                      >
+                        Property Appointment
+                      </Button>
+                    </a>
+                  </Box>
+
                 </Box>
               </Box>
             </Grid>
@@ -418,7 +422,7 @@ function Home() {
             If you've ever been burned by an agency that went dark on updates, mishandled a recovery, or created a consumer complaint that landed on your desk — you already know why TrueNorth exists.
           </Typography>
 
-          <Box sx={{ textAlign: 'center', display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Box sx={{ textAlign: 'center', display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'stretch', sm: 'center' } }}>
             <Button
               onClick={() => navigate('/contact')}
               variant="contained"
@@ -426,8 +430,8 @@ function Home() {
                 background: '#3B4E73',
                 color: '#E5F1FF',
                 fontWeight: 600,
-                padding: '1rem 2rem',
-                fontSize: '1rem',
+                padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
+                fontSize: { xs: '0.95rem', md: '1rem' },
                 '&:hover': {
                   background: '#1A2E50',
                   boxShadow: '0 8px 24px rgba(26, 46, 80, 0.2)',
@@ -445,8 +449,8 @@ function Home() {
                 color: '#3B4E73',
                 borderColor: '#3B4E73',
                 fontWeight: 600,
-                padding: '1rem 2rem',
-                fontSize: '1rem',
+                padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
+                fontSize: { xs: '0.95rem', md: '1rem' },
                 '&:hover': {
                   background: '#3B4E73',
                   color: '#E5F1FF',
