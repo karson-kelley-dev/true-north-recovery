@@ -1,7 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './layout'
-import ComingSoon from './pages/coming-soon'
-import Home from './pages/home'
+import Compliance from './pages/compliance.tsx'
+import Contact from './pages/contact.tsx'
+import Coverage from './pages/coverage.tsx'
+import Home from './pages/home.tsx'
+import Services from './pages/services.tsx'
 
 function App() {
   return (
@@ -9,8 +12,11 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route element={<Home />} />
-            <Route path='/' element={<ComingSoon />}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/services' element={<Services />} />
+            <Route path='/compliance' element={<Compliance />}></Route>
+            <Route path='/coverage' element={<Coverage />}></Route>
+            <Route path='contact' element={<Contact />}></Route>
           </Routes>
         </Layout>
       </BrowserRouter>

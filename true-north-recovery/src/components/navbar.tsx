@@ -24,7 +24,6 @@ function Navbar() {
   const navLinks = [
     { label: 'Home', path: '/' },
     { label: 'Services', path: '/services' },
-    { label: 'About Us', path: '/about' },
     { label: 'Coverage', path: '/coverage' },
     { label: 'Compliance', path: '/compliance' },
     { label: 'Contact', path: '/contact' },
@@ -70,7 +69,7 @@ function Navbar() {
     <AppBar
       position="sticky"
       sx={{
-        background: 'linear-gradient(135deg, #1A2E50 0%, #3B4E73 100%)',
+        background: '#1A2E50',
         boxShadow: '0 4px 20px rgba(26, 46, 80, 0.15)',
       }}
     >

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-//import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+import Navbar from '../components/navbar';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -8,10 +9,12 @@ interface LayoutProps {
 function Layout( { children }: LayoutProps ) {
   return(
     <>
-      {/*<Navbar/>*/}
+      <Navbar/>
       <main style={{ margin: 0, padding: 0 }}>
         { children }
       </main>
+      {/*<CallToAction />*/}
+      <Footer />
     </>
   )
 }
