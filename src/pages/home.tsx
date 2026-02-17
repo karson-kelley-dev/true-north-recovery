@@ -57,46 +57,52 @@ function Home() {
                   TrueNorth Recovery delivers professional, compliant asset recovery services for lienholders across North Carolina — built on transparency, accountability, and a commitment to raising the standard of how recovery is done.
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 2 }}>
-                  <Button
-                    onClick={() => navigate('/contact')}
-                    variant="contained"
-                    sx={{
-                      background: '#E5F1FF',
-                      color: '#1A2E50',
-                      fontWeight: 600,
-                      padding: '1rem 2rem',
-                      fontSize: '1rem',
-                      letterSpacing: '0.5px',
-                      '&:hover': {
-                        background: '#ffffff',
-                        boxShadow: '0 8px 24px rgba(26, 46, 80, 0.2)',
-                        transform: 'translateY(-2px)',
-                      },
-                      transition: 'all 0.3s ease',
-                    }}
+                 
+                  <a rel="noopener noreferrer" target="_blank" href='https://scheduler.cleardata.io/#!/calendar?a=G8kNdo_-S_uHNW44JgJ_qTcETlcpm8hjIKfQ8KR5CSQ&b=43b'
                   >
-                    Transport Appointment
-                  </Button>
-                  <Button
-                    onClick={() => navigate('/services')}
-                    variant="outlined"
-                    sx={{
-                      color: '#E5F1FF',
-                      borderColor: '#E5F1FF',
-                      fontWeight: 600,
-                      padding: '1rem 2rem',
-                      fontSize: '1rem',
-                      letterSpacing: '0.5px',
-                      '&:hover': {
+                    <Button
+                      variant="contained"
+                      sx={{
                         background: '#E5F1FF',
                         color: '#1A2E50',
-                        borderColor: '#E5F1FF',
-                      },
-                      transition: 'all 0.3s ease',
-                    }}
+                        fontWeight: 600,
+                        padding: '1rem 2rem',
+                        fontSize: '1rem',
+                        letterSpacing: '0.5px',
+                        '&:hover': {
+                          background: '#ffffff',
+                          boxShadow: '0 8px 24px rgba(26, 46, 80, 0.2)',
+                          transform: 'translateY(-2px)',
+                        },
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      Transport Appointment
+                    </Button>
+                  </a>
+                  <a rel="noopener noreferrer" target="_blank" href='https://scheduler.cleardata.io/#!/calendar?a=G8kNdo_-S_uHNW44JgJ_qTcETlcpm8hjIKfQ8KR5CSQ&b=6p7'
                   >
-                    Property Appointment
-                  </Button>
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        color: '#E5F1FF',
+                        borderColor: '#E5F1FF',
+                        fontWeight: 600,
+                        padding: '1rem 2rem',
+                        fontSize: '1rem',
+                        letterSpacing: '0.5px',
+                        '&:hover': {
+                          background: '#E5F1FF',
+                          color: '#1A2E50',
+                          borderColor: '#E5F1FF',
+                        },
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      Property Appointment
+                    </Button>
+                  </a>
+                  
                 </Box>
               </Box>
             </Grid>
