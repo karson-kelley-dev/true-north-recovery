@@ -95,7 +95,7 @@ function Home() {
                       transition: 'all 0.3s ease',
                     }}
                   >
-                    Vehicle Redemption Appointment
+                    Vehicle Redemption/Personal Property
                   </Button>
                 </Box>
               </Box>
@@ -109,7 +109,7 @@ function Home() {
         <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
           <Grid container spacing={4} alignItems="flex-start">
             {/* Left Column - Image Placeholder */}
-            <Grid size={{ xs: 12, md: 5 }}>
+            {/*<Grid size={{ xs: 12, md: 5 }}>
               <Box
                 sx={{
                   width: '100%',
@@ -125,7 +125,7 @@ function Home() {
               >
                 [Image Placeholder]
               </Box>
-            </Grid>
+            </Grid>*/}
 
             {/* Right Column - Text Content */}
             <Grid size={{ xs: 12, md: 7 }}>
