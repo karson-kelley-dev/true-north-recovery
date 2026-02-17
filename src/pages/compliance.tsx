@@ -1,10 +1,12 @@
 import {
   Box,
+  Breadcrumbs,
   Button,
   Container,
+  Link,
   Typography
 } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import ARA from '../assets/ARA-Logo-Master-Light.svg'
 import CARS from '../assets/CARS_Certified-logo.png'
 import RISC from '../assets/RISC-Logo_6_2019-300px.png'
@@ -32,18 +34,20 @@ function Compliance() {
         }}
       >
         <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: '#E5F1FF',
-              fontWeight: 500,
-              marginBottom: 1,
-              fontSize: '0.9rem',
-              letterSpacing: '1px',
-            }}
-          >
-            HOME • COMPLIANCE
-          </Typography>
+          <Breadcrumbs sx={{ marginBottom: 2, color: '#E5F1FF' }}>
+            <Link 
+              component={RouterLink} 
+              to="/" 
+              sx={{ color: '#E5F1FF', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+            >
+              HOME
+            </Link>
+            <Typography sx={{ color: '#E5F1FF' }}>
+              COMPLIANCE
+            </Typography>
+          </Breadcrumbs>
+
+
           <Typography
             variant="h2"
             sx={{

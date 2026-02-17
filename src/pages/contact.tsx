@@ -1,18 +1,21 @@
 import {
   Alert,
   Box,
+  Breadcrumbs,
   Button,
   CircularProgress,
   Container,
   FormControl,
   Grid,
   InputLabel,
+  Link,
   MenuItem,
   Select,
   TextField,
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import blueSteelTexture from '../assets/bluefinal.png'
 
 function Contact() {
@@ -119,18 +122,18 @@ function Contact() {
         }}
       >
         <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: '#E5F1FF',
-              fontWeight: 500,
-              marginBottom: 1,
-              fontSize: '0.9rem',
-              letterSpacing: '1px',
-            }}
-          >
-            HOME • CONTACT
-          </Typography>
+          <Breadcrumbs sx={{ marginBottom: 2, color: '#E5F1FF' }}>
+            <Link 
+              component={RouterLink} 
+              to="/" 
+              sx={{ color: '#E5F1FF', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+            >
+              HOME
+            </Link>
+            <Typography sx={{ color: '#E5F1FF' }}>
+              CONTACT
+            </Typography>
+          </Breadcrumbs>
           <Typography
             variant="h2"
             sx={{

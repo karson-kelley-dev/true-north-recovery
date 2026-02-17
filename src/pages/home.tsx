@@ -95,7 +95,7 @@ function Home() {
                       transition: 'all 0.3s ease',
                     }}
                   >
-                    Vehicle/Property Redemption
+                    Property Appointment
                   </Button>
                 </Box>
               </Box>

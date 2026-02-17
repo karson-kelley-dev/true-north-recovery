@@ -1,14 +1,16 @@
 import {
   Box,
+  Breadcrumbs,
   Button,
   Card,
   CardContent,
   Container,
   Grid,
+  Link,
   Typography,
 } from '@mui/material'
 import { Camera, Key, Lock, Navigation, Package, Phone, Search, Truck } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import blueSteelTexture from '../assets/bluefinal.png'
 
 function Services() {
@@ -76,18 +78,18 @@ function Services() {
         }}
       >
         <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: '#E5F1FF',
-              fontWeight: 500,
-              marginBottom: 1,
-              fontSize: '0.9rem',
-              letterSpacing: '1px',
-            }}
-          >
-            HOME • OUR SERVICES
-          </Typography>
+          <Breadcrumbs sx={{ marginBottom: 2, color: '#E5F1FF' }}>
+            <Link 
+              component={RouterLink} 
+              to="/" 
+              sx={{ color: '#E5F1FF', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+            >
+              HOME
+            </Link>
+            <Typography sx={{ color: '#E5F1FF' }}>
+              CONTACT
+            </Typography>
+          </Breadcrumbs>
           <Typography
             variant="h2"
             sx={{

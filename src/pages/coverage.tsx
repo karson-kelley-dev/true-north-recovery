@@ -1,8 +1,11 @@
 import {
   Box,
+  Breadcrumbs,
   Container,
+  Link,
   Typography
 } from '@mui/material'
+import { Link as RouterLink } from 'react-router-dom'
 import blueSteelTexture from '../assets/bluefinal.png'
 import coverageArea from '../assets/coverage-area.png'
 
@@ -27,18 +30,18 @@ function Coverage() {
         }}
       >
         <Container maxWidth="lg" disableGutters sx={{ px: { xs: 2, md: 2 } }}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: '#E5F1FF',
-              fontWeight: 500,
-              marginBottom: 1,
-              fontSize: '0.9rem',
-              letterSpacing: '1px',
-            }}
-          >
-            HOME • COVERAGE
-          </Typography>
+          <Breadcrumbs sx={{ marginBottom: 2, color: '#E5F1FF' }}>
+            <Link 
+              component={RouterLink} 
+              to="/" 
+              sx={{ color: '#E5F1FF', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+            >
+              HOME
+            </Link>
+            <Typography sx={{ color: '#E5F1FF' }}>
+              COVERAGE
+            </Typography>
+          </Breadcrumbs>
           <Typography
             variant="h2"
             sx={{
