@@ -89,6 +89,7 @@ function Home() {
                         fullWidth
                         sx={{
                           color: '#E5F1FF',
+                          background: '#1A2E50',
                           borderColor: '#E5F1FF',
                           fontWeight: 600,
                           padding: { xs: '0.875rem 1.5rem', md: '1rem 2rem' },
