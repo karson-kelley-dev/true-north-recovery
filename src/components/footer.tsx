@@ -10,7 +10,11 @@ function Footer() {
         background: '#1A2E50',
         color: 'white',
         padding: '2rem',
-        marginTop: 'auto',
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1100,
       }}
     >
       <Container maxWidth="lg">
