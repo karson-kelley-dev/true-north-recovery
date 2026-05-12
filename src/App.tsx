@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Layout from './layout/index.tsx'
 import Compliance from './pages/compliance.tsx'
 import Contact from './pages/contact.tsx'
@@ -8,7 +8,7 @@ import Services from './pages/services.tsx'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
