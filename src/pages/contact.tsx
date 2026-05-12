@@ -17,25 +17,10 @@ import {
 import { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import blueSteelTexture from '../assets/bluefinal.png'
+import { SUBJECT_ROUTES, sendEmail } from '../services/emailService'
 
 function Contact() {
-  const subjectEmailMap = {
-    'services-question': 'recovery@truenorthar.com',
-    'general-inquiry': 'recovery@truenorthar.com',
-    'debtor-appointment': 'recovery@truenorthar.com',
-    'transport-appointment': 'recovery@truenorthar.com',
-    'damage-claim': 'claims@truenorthar.com',
-    'complaint':'claims@truenorthar.com',
-  } as const
-
-  const subjectOptions = [
-    { value: 'services-question', label: 'Services Question' },
-    { value: 'general-inquiry', label: 'General Inquiry' },
-    { value: 'debtor-appointment', label: 'Debtor Appointment' },
-    { value: 'transport-appointment', label: 'Transport Appointment' },
-    { value: 'damage-claim', label: 'Damage Claim' },
-    { value: 'complaint', label: 'Complaint' },
-  ] 
+  const subjectOptions = SUBJECT_ROUTES.map(r => ({ value: r.value, label: r.label }))
 
   const [formData, setFormData] = useState({
     name: '',
@@ -65,24 +50,15 @@ function Contact() {
     setError('')
 
     try {
-      // Get the recipient email based on selected subject
-      const recipientEmail = subjectEmailMap[formData.subject as keyof typeof subjectEmailMap]
+      const route = SUBJECT_ROUTES.find(r => r.value === formData.subject)
+      if (!route) throw new Error('Invalid subject selected')
 
-      // Send email via your backend or email service
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          to: recipientEmail,
-        }),
+      await sendEmail(route, {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
       })
-
-      if (!response.ok) {
-        throw new Error('Failed to send message')
-      }
 
       setSubmitted(true)
       setFormData({
