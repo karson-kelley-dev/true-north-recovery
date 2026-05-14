@@ -7,7 +7,6 @@ import {
 } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 import blueSteelTexture from '../assets/bluefinal.png'
-import coverageArea from '../assets/coverage.png'
 
 function Coverage() {
 
@@ -65,24 +64,26 @@ function Coverage() {
                 Coverage Map
               </Typography>
 
-              <Box sx={{ width: '100%', height: 'auto', borderRadius: '8px', overflow: 'hidden', boxShadow: { xs: '0 2px 8px rgba(0,0,0,0.1)', md: '0 4px 12px rgba(0,0,0,0.1)' } }}>
-                {/*<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YPG22ULHxVgwQICrAIYKrdX_bLV5QRU&ehbc=2E312F&noprof=1"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                ></iframe>*/}
-                <img
-                  src={coverageArea}
-                  alt="Coverage Map"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    maxWidth: '100%',
-                    objectFit: 'contain'
-                  }}
-                />
+             <Box sx={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: { xs: '0 2px 8px rgba(0,0,0,0.1)', md: '0 4px 12px rgba(0,0,0,0.1)' }
+              }}>
+                <Box sx={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '600px',
+                  overflow: 'hidden',
+                }}>
+                  <iframe
+                    src="https://www.google.com/maps/d/embed?mid=1gVAiNg4xfpTxrqXoqzNO4GV0zpjzmfU&ehbc=2E312F&noprof=1"
+                    width="100%"
+                    height="660"  
+                    style={{ border: 0, marginTop: '-60px' }} 
+                  />
+                </Box>
               </Box>
             </Container>
           </Box>
