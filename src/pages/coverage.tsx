@@ -5,6 +5,7 @@ import {
   AccordionSummary,
   Box,
   Breadcrumbs,
+  CircularProgress,
   Container,
   Link,
   Typography
@@ -106,11 +107,24 @@ function Coverage() {
               height: '600px',
               overflow: 'hidden',
             }}>
+              <Box sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#f8f9fa',
+              }}>
+                <CircularProgress sx={{ color: '#3B4E73' }} />
+              </Box>
               <iframe
                 src="https://www.google.com/maps/d/embed?mid=1gVAiNg4xfpTxrqXoqzNO4GV0zpjzmfU&ehbc=2E312F&noprof=1"
                 width="100%"
                 height="660"
-                style={{ border: 0, marginTop: '-60px' }}
+                style={{ border: 0, marginTop: '-60px', position: 'relative', zIndex: 1 }}
               />
             </Box>
           </Box>
