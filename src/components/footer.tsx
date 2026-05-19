@@ -23,7 +23,7 @@ function Footer() {
             fontWeight: 400,
           }}
         >
-          © {currentYear} True North Recovery. All rights reserved.
+          © {currentYear} TrueNorth Recovery. All rights reserved.
         </Typography>
       </Container>
     </Box>
