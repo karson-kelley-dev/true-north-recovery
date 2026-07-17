@@ -50,13 +50,13 @@ function Contact() {
     setError('')
 
     try {
-      const route = SUBJECT_ROUTES.find(r => r.value === formData.subject)
-      if (!route) throw new Error('Invalid subject selected')
+      if (!formData.subject) throw new Error('Please select a subject')
 
-      await sendEmail(route, {
-        from_name: formData.name,
-        from_email: formData.email,
+      await sendEmail({
+        name: formData.name,
+        email: formData.email,
         phone: formData.phone,
+        subject: formData.subject,
         message: formData.message,
       })
 

@@ -1,80 +1,46 @@
-import emailjs from '@emailjs/browser'
+// ── Contact form email ────────────────────────────────────────────────────────
+// The form POSTs here → a Cloudflare Worker → Resend (see /worker). This replaces
+// the old client-side EmailJS flow: no API key in the browser, recipient inboxes
+// aren't exposed, and mail sends from the company's own domain.
+//
+// Same-origin path — nginx on the server proxies this to the Node contact
+// service (see server/README.md). Relative, so it works on whatever host the
+// site is served from.
+const CONTACT_ENDPOINT = '/api/contact'
 
-// ── Shared public key ─────────────────────────────────────────────────────────
-// Found in EmailJS dashboard → Account → General → Public Key
-export const EMAILJS_PUBLIC_KEY = 'aVPic-0A3lHEPhWLS'
-
-// ── Subject → routing map ─────────────────────────────────────────────────────
-// serviceId  — EmailJS Email Service (Email Services tab)
-// templateId — EmailJS Template (configure the "To" address inside each template)
-//   recovery template → To: recovery@truenorthar.com
-//   claims template   → To: claims@truenorthar.com
+// ── Subject dropdown ──────────────────────────────────────────────────────────
+// Just labels + values for the <Select>. The Worker maps each value to the right
+// internal inbox (recovery@ vs claims@), so routing lives server-side now.
 export interface SubjectRoute {
-  label: string     // shown in the dropdown
-  value: string     // used as the email subject line
-  serviceId: string
-  templateId: string
+  label: string
+  value: string
 }
 
-const RECOVERY_SERVICE_ID = 'service_e8xo3kn'
-const RECOVERY_TEMPLATE_ID = 'template_vw4tlud'
-const CLAIMS_TEMPLATE_ID = 'template_1dvgy9w'
-
 export const SUBJECT_ROUTES: SubjectRoute[] = [
-  {
-    label: 'Services Question',
-    value: 'services-question',
-    serviceId: RECOVERY_SERVICE_ID,
-    templateId: RECOVERY_TEMPLATE_ID,
-  },
-  {
-    label: 'General Inquiry',
-    value: 'general-inquiry',
-    serviceId: RECOVERY_SERVICE_ID,
-    templateId: RECOVERY_TEMPLATE_ID,
-  },
-  {
-    label: 'Debtor Appointment',
-    value: 'debtor-appointment',
-    serviceId: RECOVERY_SERVICE_ID,
-    templateId: RECOVERY_TEMPLATE_ID,
-  },
-  {
-    label: 'Transport Appointment',
-    value: 'transport-appointment',
-    serviceId: RECOVERY_SERVICE_ID,
-    templateId: RECOVERY_TEMPLATE_ID,
-  },
-  {
-    label: 'Damage Claim',
-    value: 'damage-claim',
-    serviceId: RECOVERY_SERVICE_ID,
-    templateId: CLAIMS_TEMPLATE_ID,
-  },
-  {
-    label: 'Complaint',
-    value: 'complaint',
-    serviceId: RECOVERY_SERVICE_ID,
-    templateId: CLAIMS_TEMPLATE_ID,
-  },
+  { label: 'Services Question', value: 'services-question' },
+  { label: 'General Inquiry', value: 'general-inquiry' },
+  { label: 'Debtor Appointment', value: 'debtor-appointment' },
+  { label: 'Transport Appointment', value: 'transport-appointment' },
+  { label: 'Damage Claim', value: 'damage-claim' },
+  { label: 'Complaint', value: 'complaint' },
 ]
 
-// ── Payload sent to every template ───────────────────────────────────────────
-// Template variables: {{from_name}}, {{from_email}}, {{phone}},
-//                     {{subject}}, {{message}}
-export interface EmailPayload {
-  from_name: string
-  from_email: string
+// ── Send ──────────────────────────────────────────────────────────────────────
+export interface ContactPayload {
+  name: string
+  email: string
   phone: string
+  subject: string
   message: string
 }
 
-// ── Send helper ───────────────────────────────────────────────────────────────
-export async function sendEmail(route: SubjectRoute, payload: EmailPayload): Promise<void> {
-  await emailjs.send(
-    route.serviceId,
-    route.templateId,
-    { ...payload, subject: route.label },
-    EMAILJS_PUBLIC_KEY,
-  )
+export async function sendEmail(payload: ContactPayload): Promise<void> {
+  const res = await fetch(CONTACT_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  if (!res.ok) {
+    throw new Error(`Contact send failed: ${res.status}`)
+  }
 }

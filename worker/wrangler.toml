@@ -1,0 +1,7 @@
+name = "tnr-contact"
+main = "contact-worker.js"
+compatibility_date = "2026-07-16"
+
+# RESEND_API_KEY is a SECRET — do NOT put it here. Set it with:
+#   wrangler secret put RESEND_API_KEY
+# (or in the Cloudflare dashboard → Worker → Settings → Variables → Secrets)
