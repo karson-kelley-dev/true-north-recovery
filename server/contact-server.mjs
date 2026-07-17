@@ -19,6 +19,13 @@ const RECOVERY_INBOX = "recovery@truenorthar.com";
 const CLAIMS_INBOX = "claims@truenorthar.com";
 const CLAIMS_SUBJECTS = new Set(["damage-claim", "complaint"]);
 
+// CC'd on every submission (both recovery@ and claims@).
+const CC = [
+  "rtorres@truenorthar.com",
+  "kbitla@truenorthar.com",
+  "randerson@truenorthar.com",
+];
+
 const SUBJECT_LABELS = {
   "services-question": "Services Question",
   "general-inquiry": "General Inquiry",
@@ -196,6 +203,7 @@ const server = http.createServer((req, res) => {
         body: JSON.stringify({
           from: FROM,
           to: [to],
+          cc: CC,
           reply_to: email,
           subject: `New ${subjectLabel} from ${name}`,
           html,
